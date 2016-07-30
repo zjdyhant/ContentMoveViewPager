@@ -7,7 +7,7 @@ ViewPager里面的内容跟着移动。看到miui系统屏保效果，自己实�
 
 ###实现很简单
 用viewPager实现图片切换，对PagerAdapter设置OnPageChangeListener监听，onPageScrolled方法里，不停的对MyScrollImageView设置偏移量。<br>
-onPageScrolled方法
+*onPageScrolled方法
 ```Java
 public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 mList.get(position).setOffset(1 - positionOffset, positionOffsetPixels);
@@ -15,8 +15,8 @@ public void onPageScrolled(int position, float positionOffset, int positionOffse
                     mList.get(position + 1).setOffset(positionOffset, -(mWindowWidth - positionOffsetPixels));
                 }
             }
-            ```
-MyScrollImageView
+```
+*MyScrollImageView类
 ```Java
 public class MyScrollImageView extends RelativeLayout {
 
