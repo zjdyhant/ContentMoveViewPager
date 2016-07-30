@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -49,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                Log.e("hant", "position" + position + "  offset  " + positionOffset + "  pixels  " + positionOffsetPixels);
                 mList.get(position).setOffset(1 - positionOffset, positionOffsetPixels);
                 if (position + 1 < mList.size()) {
                     mList.get(position + 1).setOffset(positionOffset, -(mWindowWidth - positionOffsetPixels));
