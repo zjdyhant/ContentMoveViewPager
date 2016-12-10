@@ -52,4 +52,76 @@ public class MyScrollImageView extends RelativeLayout {
 
 }
 ```
+* MyScrollImageView类
+```Java
+public class MyScrollImageView extends RelativeLayout {
+
+    private ImageView mImageView;
+    private TextView mTextViewTitle;
+    private TextView mTextViewContent;
+
+    public MyScrollImageView(Context context, String title, String content, int resId) {
+        this(context, null);
+        mTextViewTitle.setText(title);
+        mTextViewContent.setText(content);
+        mImageView.setImageResource(resId);
+    }
+
+    public MyScrollImageView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public MyScrollImageView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        LayoutInflater.from(context).inflate(R.layout.layout_scroll_imageview, this, true);
+        mImageView = (ImageView) findViewById(R.id.image_view);
+        mTextViewTitle = (TextView) findViewById(R.id.txt_title);
+        mTextViewContent = (TextView) findViewById(R.id.txt_content);
+    }
+
+    public void setOffset(float positionOffset, int positionOffsetPixels) {
+        mTextViewTitle.setAlpha(positionOffset);
+        mTextViewContent.setAlpha(positionOffset);
+        mImageView.setTranslationX(positionOffsetPixels / 2);
+        invalidate();
+    }
+
+}
+```
+* MyScrollImageView类
+```Java
+public class MyScrollImageView extends RelativeLayout {
+
+    private ImageView mImageView;
+    private TextView mTextViewTitle;
+    private TextView mTextViewContent;
+
+    public MyScrollImageView(Context context, String title, String content, int resId) {
+        this(context, null);
+        mTextViewTitle.setText(title);
+        mTextViewContent.setText(content);
+        mImageView.setImageResource(resId);
+    }
+
+    public MyScrollImageView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public MyScrollImageView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        LayoutInflater.from(context).inflate(R.layout.layout_scroll_imageview, this, true);
+        mImageView = (ImageView) findViewById(R.id.image_view);
+        mTextViewTitle = (TextView) findViewById(R.id.txt_title);
+        mTextViewContent = (TextView) findViewById(R.id.txt_content);
+    }
+
+    public void setOffset(float positionOffset, int positionOffsetPixels) {
+        mTextViewTitle.setAlpha(positionOffset);
+        mTextViewContent.setAlpha(positionOffset);
+        mImageView.setTranslationX(positionOffsetPixels / 2);
+        invalidate();
+    }
+
+}
+```
 
